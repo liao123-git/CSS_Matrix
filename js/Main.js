@@ -18,7 +18,6 @@ class Main {
     }
 
     keyEvent(e, down = 0) {
-        if((e.keyCode === 38 && down) || (e.keyCode === 40 && down) ) return this.dir = [0,0,0,0];
         if (e.keyCode >= 37 && e.keyCode <= 40) {
             /* 点击的键盘为上下左右其中一个 */
 
@@ -34,6 +33,8 @@ class Main {
     carTransform() {
         let distance = 0; // 移动距离，斜边，用来计算新的坐标
         let is_moving = 0; // 是否在移动，是的话记录当前移动速度
+        
+        if(this.dir[1] && this.dir[3]) this.dir = [0,0,0,0];
 
         this.dir.forEach((v, k) => {
             /* 移动 */
