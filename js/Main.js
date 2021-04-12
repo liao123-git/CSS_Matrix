@@ -18,6 +18,7 @@ class Main {
     }
 
     keyEvent(e, down = 0) {
+        if(e.keyCode === 38 && e.keyCode === 40 && down) return this.dir = [0,0,0,0];
         if (e.keyCode >= 37 && e.keyCode <= 40) {
             /* 点击的键盘为上下左右其中一个 */
 
